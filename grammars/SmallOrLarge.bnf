@@ -1,6 +1,6 @@
 <code> ::= <code><statement>'\n'|<statement>'\n'
 <statement> ::= <assign>|<compound_stmt>
-<compound_stmt> ::= <if>|'loopBreak% = 0\nwhile '<bool>':{:\n'<code>'\nif loopBreak% greater_than loop_break_constant:{:\nbreak\n:}loopBreak% += 1\n:}'
+<compound_stmt> ::= <if>
 <assign> ::= <bool_var>' = '<bool>|<int_assign>|<string_var>' = '<string>
 <number> ::= <number><num>|<num>
 <num> ::= '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'
