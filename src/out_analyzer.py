@@ -1,7 +1,10 @@
+import os
+
 successes = 0
 sum_iterations = 0
 tries = 0
-for file_index in range(4):
+pool_count = os.cpu_count()
+for file_index in range(pool_count):
     file_name = "out" + str(file_index) + ".csv"
     with open(file_name) as fp:
         i = 0
