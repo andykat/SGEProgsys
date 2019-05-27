@@ -50,8 +50,8 @@ if __name__ == '__main__':
     problem_name = "SmallOrLarge"
     population_size = 1000  # size of population
     recursion_max = 8  # level of recursion
-    sge_iterations = 300  # number of generations
-    test_iterations = 48  # number of repeated tests
+    sge_iterations = 200  # number of generations
+    test_iterations = 8  # number of repeated tests
 
     # here we only run 1 test on one thread
     pool_count = os.cpu_count()
@@ -62,6 +62,7 @@ if __name__ == '__main__':
         pool_inputs.append({"index": i, "sge_iterations": sge_iterations, "problem_name": problem_name,
                             "test_iterations": int(test_iterations/pool_count),
                             "population_size": population_size, "recursion_max": recursion_max})
+        break
 
     pool.map(run_test_iterations, pool_inputs)
     # run_test_iterations({"index": 0, "sge_iterations": sge_iterations, "problem_name": problem_name,

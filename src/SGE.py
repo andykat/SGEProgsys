@@ -694,7 +694,7 @@ class SGE:
         iteration_count = 0
         success_flag = False
         for i in range(0, iterations):
-            if i % 50 == 0:
+            if i % 10 == 0:
                 print("iteration: " + str(i))
             iteration_count += 1
             success_flag = self.step()
@@ -786,17 +786,17 @@ class SGE:
                 self.newpopulation.append(children[1])
 
         # print top performers
-        # print("Top Performers:")
+        print("Top Performers:")
 
-        # print("Top Average Fitness: %.2f" % afitness)
+        print("Top Average Fitness: %.2f" % afitness)
 
-        # for i in range(0, 3):
-        #     phen = self.translate_seq_to_phenotype(self.currentPopulation[self.fitness_indicies[i][0]])[0][0]
-        #     stri = ""
-        #     # for o in phen:
-        #     #     stri = stri + o
-        #     print(stri + ":" + str(self.fitness_indicies[i][1]) + "   seqlength:" + str(len(self.currentPopulation[self.fitness_indicies[i][0]])) )
-        # print("\n")
+        for i in range(0, 1):
+            phen = self.translate_seq_to_phenotype(self.currentPopulation[self.fitness_indicies[i][0]])[0][0]
+            stri = ""
+            # for o in phen:
+            #     stri = stri + o
+            print(stri + ":" + str(self.fitness_indicies[i][1]) + "   seqlength:" + str(len(self.currentPopulation[self.fitness_indicies[i][0]])) )
+        print("\n")
         flag = False
         if math.fabs(self.fitness_indicies[0][1]) < 0.0001:
             flag = True
