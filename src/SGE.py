@@ -786,17 +786,17 @@ class SGE:
                 self.newpopulation.append(children[1])
 
         # print top performers
-        print("Top Performers:")
-
-        print("Top Average Fitness: %.2f" % afitness)
-
-        for i in range(0, 1):
-            phen = self.translate_seq_to_phenotype(self.currentPopulation[self.fitness_indicies[i][0]])[0][0]
-            stri = ""
-            # for o in phen:
-            #     stri = stri + o
-            print(stri + ":" + str(self.fitness_indicies[i][1]) + "   seqlength:" + str(len(self.currentPopulation[self.fitness_indicies[i][0]])) )
-        print("\n")
+        # print("Top Performers:")
+        #
+        # print("Top Average Fitness: %.2f" % afitness)
+        #
+        # for i in range(0, 1):
+        #     phen = self.translate_seq_to_phenotype(self.currentPopulation[self.fitness_indicies[i][0]])[0][0]
+        #     stri = ""
+        #     # for o in phen:
+        #     #     stri = stri + o
+        #     print(stri + ":" + str(self.fitness_indicies[i][1]) + "   seqlength:" + str(len(self.currentPopulation[self.fitness_indicies[i][0]])) )
+        # print("\n")
         flag = False
         if math.fabs(self.fitness_indicies[0][1]) < 0.0001:
             flag = True
@@ -840,15 +840,15 @@ class SGE:
             exec(final_code, loc, loc)
             error = loc['quality']
         except TimeoutException:
-            print("Timeout exception")
+            # print("Timeout exception")
             error = 9999999
         except Exception as e:
-            print("Error in code")
-            print(e)
-            print("finalcode")
-            print("------------------------------------------------------")
-            print(final_code)
-            print("------------------------------------------------------")
+            # print("Error in code")
+            # print(e)
+            # print("finalcode")
+            # print("------------------------------------------------------")
+            # print(final_code)
+            # print("------------------------------------------------------")
             error = 9999999
 
         signal.alarm(0)
