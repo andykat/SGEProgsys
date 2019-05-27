@@ -13,9 +13,9 @@ class TimeoutException(Exception):   # Custom exception class
     pass
 
 def timeout_handler(signum, frame):   # Custom signal handler
-    # raise TimeoutException
+    raise TimeoutException
     # print("timeout exception")
-    pass
+    # pass
 
 class SGE:
 
@@ -837,7 +837,7 @@ class SGE:
         final_code = self.helper_code.replace("<insertCodeHere>", code)
 
         error = 0.0
-        signal.alarm(1.0)
+        signal.alarm(1)
         # signal.setitimer(signal.ITIMER_REAL, 0.1)
         try:
             loc = {}
