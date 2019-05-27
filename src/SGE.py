@@ -842,12 +842,12 @@ class SGE:
         except TimeoutException:
             error = 9999999
         except Exception as e:
-            # print("Error in code")
-            # print(e)
-            # print("finalcode")
-            # print("------------------------------------------------------")
-            # print(final_code)
-            # print("------------------------------------------------------")
+            print("Error in code")
+            print(e)
+            print("finalcode")
+            print("------------------------------------------------------")
+            print(final_code)
+            print("------------------------------------------------------")
             error = 9999999
 
         signal.alarm(0)
