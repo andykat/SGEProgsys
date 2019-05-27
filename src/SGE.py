@@ -862,7 +862,7 @@ class SGE:
         try:
             signal.alarm(0)
         except Exception as e:
-            pass
+            signal.signal(signal.SIGALRM, timeout_handler)
 
         self.fitness_cache[code] = -error
 
