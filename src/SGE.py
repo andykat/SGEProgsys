@@ -14,7 +14,8 @@ class TimeoutException(Exception):   # Custom exception class
 
 def timeout_handler(signum, frame):   # Custom signal handler
     # raise TimeoutException
-    print("timeout exception")
+    # print("timeout exception")
+    pass
 
 class SGE:
 
@@ -857,8 +858,11 @@ class SGE:
             # print(final_code)
             # print("------------------------------------------------------")
             error = 9999999
-
-        signal.alarm(0)
+            
+        try:
+            signal.alarm(0)
+        except Exception as e:
+            pass
 
         self.fitness_cache[code] = -error
 
