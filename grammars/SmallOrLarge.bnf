@@ -6,12 +6,12 @@
 <num> ::= '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'
 <comp_op> ::= 'greater_than'|'less_than'|'=='|'greater_equal_than'|'less_equal_than'|'!='|'is'|'is not'
 <string_const_part> ::= <string_const_part><string_literal>|<string_literal>
-<bool> ::= <bool_var>|<bool_const>|'not '<bool>|'( '<bool>' '<bool_op>' '<bool>' )'|<int>' '<comp_op>' '<int>|<string>' in '<string>|<string>' not in '<string>|<string>' == '<string>|<string>' != '<string>|<string>'.startswith('<string>')'|<string>'.endswith('<string>')'
+<bool> ::= <int>' '<comp_op>' '<int>
 <bool_var> ::= 'b0'|'b1'|'b2'
 <bool_op> ::= 'and'|'or'
 <bool_const> ::= 'True'|'False'
 <if> ::= 'if '<bool>':{:\n'<code>':}'|'if '<bool>':{:\n'<code>':}else:{:\n'<code>':}'
-<int> ::= <int_var>|'int('<number>'.0)'|<arith_prefix><int>|'( '<int>' '<arith_ops>' '<int>' )'|<int_arith_ops_protected>'('<int>','<int>')'|'min('<int>', '<int>')'|'max('<int>', '<int>')'|'abs('<int>')'|'len('<string>')'|'saveOrd('<string>')'
+<int> ::= <int_var>|'int('<number>'.0)'
 <int_var> ::= 'i0'|'i1'|'i2'|'in0'
 <int_assign> ::= <int_var>' = '<int>|<int_var>' '<arith_ops>'= '<int>
 <arith_ops> ::= '+'|'-'|'*'

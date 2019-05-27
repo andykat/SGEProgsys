@@ -847,6 +847,10 @@ class SGE:
         except Exception as e:
             # print("Error in code")
             # print(e)
+            # print("code")
+            # print("------------------------------------------------------")
+            # print(code)
+            # print("------------------------------------------------------")
             # print("finalcode")
             # print("------------------------------------------------------")
             # print(final_code)

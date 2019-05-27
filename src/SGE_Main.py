@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
     # SmallOrLargeClean is the simplified grammar, and SmallOrLarge is the grammar used
     # in benchmark tests
-    problem_name = "SmallOrLargeClean"
+    problem_name = "SmallOrLarge"
     population_size = 1000  # size of population
     recursion_max = 6  # level of recursion
     sge_iterations = 300  # number of generations
@@ -62,6 +62,7 @@ if __name__ == '__main__':
         pool_inputs.append({"index": i, "sge_iterations": sge_iterations, "problem_name": problem_name,
                             "test_iterations": int(test_iterations/pool_count),
                             "population_size": population_size, "recursion_max": recursion_max})
+        break
 
     pool.map(run_test_iterations, pool_inputs)
     # run_test_iterations({"index": 0, "sge_iterations": sge_iterations, "problem_name": problem_name,
