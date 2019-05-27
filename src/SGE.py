@@ -833,7 +833,8 @@ class SGE:
         final_code = self.helper_code.replace("<insertCodeHere>", code)
 
         error = 0.0
-        signal.alarm(0.1)
+        # signal.alarm(0.1)
+        signal.setitimer(signal.ITIMER_REAL, 0.1)
         try:
             loc = {}
             exec(final_code, loc, loc)
