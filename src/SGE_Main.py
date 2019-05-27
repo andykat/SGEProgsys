@@ -47,16 +47,15 @@ if __name__ == '__main__':
 
     # SmallOrLargeClean is the simplified grammar, and SmallOrLarge is the grammar used
     # in benchmark tests
-    problem_name = "NumberIO"
+    problem_name = "LastIndexOfZero"
     population_size = 1000  # size of population
     recursion_max = 6  # level of recursion
-    sge_iterations = 100  # number of generations
+    sge_iterations = 300  # number of generations
     test_iterations = 24  # number of repeated tests
 
     # here we only run 1 test on one thread
     pool_count = os.cpu_count()
     pool = Pool(pool_count)
-    # pool = Pool(4)
     pool_inputs = []
     for i in range(0, pool_count):
         pool_inputs.append({"index": i, "sge_iterations": sge_iterations, "problem_name": problem_name,
