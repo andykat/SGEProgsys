@@ -840,6 +840,7 @@ class SGE:
             exec(final_code, loc, loc)
             error = loc['quality']
         except TimeoutException:
+            print("Timeout exception")
             error = 9999999
         except Exception as e:
             print("Error in code")
