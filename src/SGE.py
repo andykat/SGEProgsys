@@ -837,8 +837,8 @@ class SGE:
         final_code = self.helper_code.replace("<insertCodeHere>", code)
 
         error = 0.0
-        # signal.alarm(0.1)
-        signal.setitimer(signal.ITIMER_REAL, 0.1)
+        signal.alarm(1.0)
+        # signal.setitimer(signal.ITIMER_REAL, 0.1)
         try:
             loc = {}
             exec(final_code, loc, loc)
@@ -859,10 +859,10 @@ class SGE:
             # print("------------------------------------------------------")
             error = 9999999
 
-        try:
-            signal.alarm(0)
-        except Exception as e:
-            signal.signal(signal.SIGALRM, timeout_handler)
+        # try:
+        signal.alarm(0)
+        # except Exception as e:
+        #     signal.signal(signal.SIGALRM, timeout_handler)
 
         self.fitness_cache[code] = -error
 
