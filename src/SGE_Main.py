@@ -62,7 +62,6 @@ if __name__ == '__main__':
         pool_inputs.append({"index": i, "sge_iterations": sge_iterations, "problem_name": problem_name,
                             "test_iterations": int(test_iterations/pool_count),
                             "population_size": population_size, "recursion_max": recursion_max})
-        break
 
     pool.map(run_test_iterations, pool_inputs)
     # run_test_iterations({"index": 0, "sge_iterations": sge_iterations, "problem_name": problem_name,
