@@ -69,7 +69,7 @@ class SGE:
         self.not_possible_rhs_for_endcycle = {}
         self.nonterminal_terminates = set()
         self.secondary_nonterminal_terminates = set()
-
+        self.count_iteration = 0
         signal.signal(signal.SIGALRM, timeout_handler)
 
     def read_supplementary_files(self):
@@ -694,7 +694,8 @@ class SGE:
         iteration_count = 0
         success_flag = False
         for i in range(0, iterations):
-            if i % 10 == 0:
+            self.count_iteration = i
+            if i % 25 == 0:
                 print("iteration: " + str(i))
             iteration_count += 1
             success_flag = self.step()
@@ -788,7 +789,8 @@ class SGE:
         # print top performers
         # print("Top Performers:")
         #
-        # print("Top Average Fitness: %.2f" % afitness)
+        if self.count_iteration % 25 == 0:
+            print("Top Average Fitness: %.2f" % afitness)
         #
         # for i in range(0, 1):
         #     phen = self.translate_seq_to_phenotype(self.currentPopulation[self.fitness_indicies[i][0]])[0][0]
