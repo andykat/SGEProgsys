@@ -694,8 +694,8 @@ class SGE:
         iteration_count = 0
         success_flag = False
         for i in range(0, iterations):
-            # if i % 10 == 0:
-            #     print("iteration: " + str(i))
+            if i % 50 == 0:
+                print("iteration: " + str(i))
             iteration_count += 1
             success_flag = self.step()
             if success_flag:
