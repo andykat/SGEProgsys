@@ -40,7 +40,7 @@ def run_test_iterations(input_var):
 
 
 if __name__ == '__main__':
-    import src.SGE as SGE
+    import SGE
 
     # sge_iterations = 60
     # problem_name = "NumberIO"
