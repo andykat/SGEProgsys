@@ -17,9 +17,9 @@
 <arith_ops> ::= '+'|'-'|'*'
 <int_arith_ops_protected> ::= 'divInt'|'mod'
 <arith_prefix> ::= '+'|'-'
-<string> ::= <string_var>|<string_const>|<string_slice>|'getCharFromString('<string>', '<int>')'|'saveChr('<int>')'|'('<string>' + '<string>')'|<string>'.lstrip()'|<string>'.rstrip()'|<string>'.strip()'|<string>'.lstrip('<string>')'|<string>'.rstrip('<string>')'|<string>'.strip('<string>')'|<string>'.capitalize()'
+<string> ::= <string_const>
 <string_var> ::= 's0'|'s1'|'s2'|'res0'
 <string_slice> ::= <string>'['<int>':'<int>']'|<string>'[:'<int>']'|<string>'['<int>':]'
-<string_const> ::= "'"<string_const_part>"'"|"'small'"|"'large'"
+<string_const> ::= '""'|"'small'"|"'large'"
 <string_literal> ::= ''|' '|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|','|'-'|'.'|'0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|':'|';'|'greater_than'|'='|'less_than'|'?'|'@'|'A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|'M'|'N'|'O'|'P'|'Q'|'R'|'S'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z'|'['|']'|'^'|'_'|'`'|'a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'u'|'v'|'w'|'x'|'y'|'z'|'{'|'|'|'}'
 <blank> ::= ''
