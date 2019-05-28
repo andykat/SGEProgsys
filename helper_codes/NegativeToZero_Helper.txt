@@ -90,6 +90,7 @@ def saveRange(start, end):
 #  evolved function
 def evolve(in0):
   # stop.value is a boolean flag which should be used to check if the EA wants the program to stop.value
+  stop = False
   loopBreakConst = 2 * len(in0)
   loopBreak = 0
   b0 = bool(); b1 = bool(); b2 = bool()

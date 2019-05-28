@@ -3,7 +3,7 @@
 <compound_stmt> ::= <if>|'loopBreak% = 0\nwhile '<bool>':{:\n'<code>'\nif loopBreak% > loopBreakConst or stop:{:\nbreak\n:}loopBreak% += 1\n:}'
 <assign> ::= <bool_var>' = '<bool>|<int_assign>
 <bool_var> ::= 'b0'|'b1'|'b2'
-<comp_op> ::= '<'|'>'|'=='|'>='|'<='|'!='
+<comp_op> ::= 'greater_than'|'less_than'|'=='|'greater_equal_than'|'less_equal_than'|'!='
 <bool> ::= <bool_bool>|<bool_int>
 <bool_int> ::= <int>' '<comp_op>' '<int>
 <bool_bool> ::= <bool_var>|<bool_const>|'not '<bool>|'( '<bool>' '<bool_op>' '<bool>' )'

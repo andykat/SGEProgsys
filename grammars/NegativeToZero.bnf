@@ -7,7 +7,7 @@
 <in_list_comp_op> ::= 'in'|'not in'
 <list_comp_op> ::= '=='|'!='
 <bool_var> ::= 'b0'|'b1'|'b2'
-<comp_op> ::= '<'|'>'|'=='|'>='|'<='|'!='
+<comp_op> ::= 'greater_than'|'less_than'|'=='|'greater_equal_than'|'less_equal_than'|'!='
 <bool> ::= <bool_bool>|<bool_int>|<bool_list_int>
 <bool_int> ::= <int>' '<comp_op>' '<int>
 <bool_list_int> ::= <int>' '<in_list_comp_op>' '<list_int>|<list_int>' '<list_comp_op>' '<list_int>
@@ -29,4 +29,4 @@
 <list_int_var> ::= 'li0'|'li1'|'li2'|'in0'|'res0'
 <list_int> ::= <list_int_var>|'list(saveRange('<int>','<int>'))'|<list_int_slice>
 <list_int_slice> ::= <list_int>'['<int>':'<int>']'|<list_int>'[:'<int>']'|<list_int>'['<int>':]'
-
+<blank> ::= ''

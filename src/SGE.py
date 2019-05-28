@@ -858,16 +858,16 @@ class SGE:
             error = 9999999
             self.error_counts += 1
         except Exception as e:
-            # print("Error in code")
-            # print(e)
+            print("Error in code")
+            print(e)
             # print("code")
             # print("------------------------------------------------------")
             # print(code)
             # print("------------------------------------------------------")
-            # print("finalcode")
-            # print("------------------------------------------------------")
-            # print(final_code)
-            # print("------------------------------------------------------")
+            print("finalcode")
+            print("------------------------------------------------------")
+            print(final_code)
+            print("------------------------------------------------------")
             error = 9999999
             self.error_counts += 1
 

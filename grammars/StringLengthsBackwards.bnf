@@ -7,7 +7,7 @@
 <in_list_comp_op> ::= 'in'|'not in'
 <list_comp_op> ::= '=='|'!='
 <bool_var> ::= 'b0'|'b1'|'b2'
-<comp_op> ::= '<'|'>'|'=='|'>='|'<='|'!='
+<comp_op> ::= 'greater_than'|'less_than'|'=='|'greater_equal_than'|'less_equal_than'|'!='
 <bool> ::= <bool_bool>|<bool_int>|<bool_string>|<bool_list_int>|<bool_list_string>
 <bool_int> ::= <int>' '<comp_op>' '<int>
 <bool_string> ::= <string>' in '<string>|<string>' not in '<string>|<string>' == '<string>|<string>' != '<string>|<string>'.startswith('<string>')'|<string>'.endswith('<string>')'
@@ -37,7 +37,7 @@
 <string_alpha_up> ::= 'A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|'M'|'N'|'O'|'P'|'Q'|'R'|'S'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z'
 <string_alpha_low> ::= 'a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'u'|'v'|'w'|'x'|'y'|'z'
 <string_alpha_num> ::= '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'
-<string_nonalphanum> ::= ''|'\\\n'|'\\\t'|' '|'!'|'"'|'#'|'$'|'%'|'&'|"\\'"|'('|')'|'*'|'+'|','|'-'|'.'|'/'|':'|';'|'<'|'='|'>'|'?'|'@'|'['|'\\\\'|']'|'^'|'_'|'`'
+<string_nonalphanum> ::= ''|' '|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|','|'-'|'.'|'/'|':'|';'|'='|'?'|'@'|'^'|'_'|'`'
 <for_int> ::= 'loopBreak% = 0\nfor '<int_var>' in range(len('<list_int>')):{:\n'<code>'\nif loopBreak% > loopBreakConst or stop:{:\nbreak\n:}loopBreak% += 1\n:}'|'loopBreak% = 0\nfor '<int_var>' in '<list_int>':{:\n'<code>'\nif loopBreak% > loopBreakConst or stop:{:\nbreak\n:}loopBreak% += 1\n:}'
 <call_int> ::= <list_int_var>'.append('<int>')'|<list_int_var>'.insert('<int>','<int>')'|'deleteListItem('<list_int>', '<int>')'|'setListIndexTo('<list_int>', '<int>', '<int>')'|<list_int_var>'.reverse()'
 <list_int_var> ::= 'li0'|'li1'|'li2'|'res0'
@@ -48,3 +48,4 @@
 <list_string_var> ::= 'ls0'|'ls1'|'ls2'|'in0'
 <list_string> ::= <list_string_var>|<list_string_slice>
 <list_string_slice> ::= <list_string>'['<int>':'<int>']'|<list_string>'[:'<int>']'|<list_string>'['<int>':]'
+<blank> ::= ''

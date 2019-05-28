@@ -47,13 +47,12 @@ if __name__ == '__main__':
 
     # SmallOrLargeClean is the simplified grammar, and SmallOrLarge is the grammar used
     # in benchmark tests
-    problem_name = "Checksum"
+    problem_name = "Median"
     population_size = 1000  # size of population
     recursion_max = 6  # level of recursion
     sge_iterations = 250  # number of generations
-    test_iterations = 24  # number of repeated tests
+    test_iterations = 8  # number of repeated tests
 
-    # here we only run 1 test on one thread
     pool_count = os.cpu_count()
     pool = Pool(pool_count)
     pool_inputs = []
@@ -63,6 +62,9 @@ if __name__ == '__main__':
                             "population_size": population_size, "recursion_max": recursion_max})
 
     pool.map(run_test_iterations, pool_inputs)
+
+    # here we only run 1 test on one thread
+
     # run_test_iterations({"index": 0, "sge_iterations": sge_iterations, "problem_name": problem_name,
     #                      "test_iterations": test_iterations,
     #                      "population_size": population_size, "recursion_max": recursion_max})

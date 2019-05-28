@@ -7,7 +7,7 @@
 <in_list_comp_op> ::= 'in'|'not in'
 <list_comp_op> ::= '=='|'!='
 <bool_var> ::= 'b0'|'b1'|'b2'
-<comp_op> ::= '<'|'>'|'=='|'>='|'<='|'!='
+<comp_op> ::= 'greater_than'|'less_than'|'=='|'greater_equal_than'|'less_equal_than'|'!='
 <bool> ::= <bool_bool>|<bool_int>|<bool_string>
 <bool_int> ::= <int>' '<comp_op>' '<int>
 <bool_string> ::= <string>' in '<string>|<string>' not in '<string>|<string>' == '<string>|<string>' != '<string>|<string>'.startswith('<string>')'|<string>'.endswith('<string>')'
@@ -32,8 +32,8 @@
 <string_strip> ::= <string>'.lstrip()'|<string>'.rstrip()'|<string>'.strip()'|<string>'.lstrip('<string>')'|<string>'.rstrip('<string>')'|<string>'.strip('<string>')'
 <string_slice> ::= <string>'['<int>':'<int>']'|<string>'[:'<int>']'|<string>'['<int>':]'
 <string_literal> ::= <string_alpha_up>|<string_alpha_low>|<string_alpha_num>|<string_nonalphanum>
-<string_alpha_up> ::= '"A"'|'"B"'|'"C"'|'"D"'|'"E"'|'"F"'|'"G"'|'"H"'|'"I"'|'"J"'|'"K"'|'"L"'|'"M"'|'"N"'|'"O"'|'"P"'|'"Q"'|'"R"'|'"S"'|'"T"'|'"U"'|'"V"'|'"W"'|'"X"'|'"Y"'|'"Z"'
-<string_alpha_low> ::= '"a"'|'"b"'|'"c"'|'"d"'|'"e"'|'"f"'|'"g"'|'"h"'|'"i"'|'"j"'|'"k"'|'"l"'|'"m"'|'"n"'|'"o"'|'"p"'|'"q"'|'"r"'|'"s"'|'"t"'|'"u"'|'"v"'|'"w"'|'"x"'|'"y"'|'"z"'
-<string_alpha_num> ::= '"0"'|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'|'"8"'|'"9"'
-<string_nonalphanum> ::= '""'|'" "'|'"!"'|'"""'|'"#"'|'"$"'|'"%"'|'"&"'|'"*"'|'"+"'|'","'|'"-"'|'"."'|'"/"'|'":"'|'";"'|'"="'|'"?"'|'"@"'|'^""'|'"_"'|'"`"'
+<string_alpha_up> ::= 'A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|'M'|'N'|'O'|'P'|'Q'|'R'|'S'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z'
+<string_alpha_low> ::= 'a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'u'|'v'|'w'|'x'|'y'|'z'
+<string_alpha_num> ::= '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'
+<string_nonalphanum> ::= ''|' '|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|','|'-'|'.'|'/'|':'|';'|'='|'?'|'@'|'^'|'_'|'`'
 <blank> ::= ''
