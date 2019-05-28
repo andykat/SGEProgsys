@@ -47,11 +47,11 @@ if __name__ == '__main__':
 
     # SmallOrLargeClean is the simplified grammar, and SmallOrLarge is the grammar used
     # in benchmark tests
-    problem_name = "StringLengthsBackwards"
+    problem_name = "VectorAverage"
     population_size = 1000  # size of population
     recursion_max = 6  # level of recursion
     sge_iterations = 250  # number of generations
-    test_iterations = 24  # number of repeated tests
+    test_iterations = 8  # number of repeated tests
 
     pool_count = os.cpu_count()
     pool = Pool(pool_count)
