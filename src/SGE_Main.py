@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
     # SmallOrLargeClean is the simplified grammar, and SmallOrLarge is the grammar used
     # in benchmark tests
-    problem_name = "Syllables"
+    problem_name = "VectorAverage"
     population_size = 1000  # size of population
     recursion_max = 6  # level of recursion
     sge_iterations = 250  # number of generations
