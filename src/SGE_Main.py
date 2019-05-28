@@ -47,10 +47,10 @@ if __name__ == '__main__':
 
     # SmallOrLargeClean is the simplified grammar, and SmallOrLarge is the grammar used
     # in benchmark tests
-    problem_name = "LastIndexOfZero"
+    problem_name = "Checksum"
     population_size = 1000  # size of population
     recursion_max = 6  # level of recursion
-    sge_iterations = 300  # number of generations
+    sge_iterations = 250  # number of generations
     test_iterations = 24  # number of repeated tests
 
     # here we only run 1 test on one thread

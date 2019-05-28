@@ -73,6 +73,8 @@ class SGE:
         self.secondary_nonterminal_terminates = set()
         self.count_iteration = 0
         signal.signal(signal.SIGALRM, timeout_handler)
+        self.error_counts = 0
+        self.error_programs_total = 0
 
     def read_supplementary_files(self):
         """
@@ -715,7 +717,6 @@ class SGE:
         self.fitness_indicies = []
         for i in range(0, self.population_size):
             self.fitness_indicies.append([i, self.fitness[i]])
-
         sorted(self.fitness_indicies, key=lambda x: x[1], reverse=True)
         self.highest_performers = []
         self.highest_fitnesses = []
@@ -729,6 +730,13 @@ class SGE:
             self.highest_performers.append(tabbed_code)
             self.highest_fitnesses.append(self.fitness_indicies[i][1])
         # print(self.highest_fitnesses[0])
+        print("error rate")
+        tstr = "Errors: " + str(self.error_counts)
+        print(tstr)
+        tstr = "Total Programs Run: " + str(self.error_programs_total)
+        print(tstr)
+
+
         return [self.highest_performers, self.highest_fitnesses, success_flag, iteration_count,
                 self.cache_use_per_iteration]
 
@@ -837,6 +845,8 @@ class SGE:
         final_code = self.helper_code.replace("<insertCodeHere>", code)
 
         error = 0.0
+
+        self.error_programs_total += 1
         signal.alarm(1)
         # signal.setitimer(signal.ITIMER_REAL, 0.1)
         try:
@@ -846,18 +856,20 @@ class SGE:
         except TimeoutException:
             # print("Timeout exception")
             error = 9999999
+            self.error_counts += 1
         except Exception as e:
-            print("Error in code")
-            print(e)
-            print("code")
-            print("------------------------------------------------------")
-            print(code)
-            print("------------------------------------------------------")
+            # print("Error in code")
+            # print(e)
+            # print("code")
+            # print("------------------------------------------------------")
+            # print(code)
+            # print("------------------------------------------------------")
             # print("finalcode")
             # print("------------------------------------------------------")
             # print(final_code)
             # print("------------------------------------------------------")
             error = 9999999
+            self.error_counts += 1
 
         # try:
         signal.alarm(0)
