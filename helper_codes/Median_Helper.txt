@@ -1,7 +1,8 @@
+import math
+
 # *****************************************************************************
 # Helper Code
 # *****************************************************************************
-import math
 
 def div(nom, denom):
   if denom <= 0.00001:
@@ -79,31 +80,24 @@ def saveSplit(curString, separator):
     return []
   return curString.split(separator)
 
-
-def saveRange(start, end):
-  if end > start and abs(start - end) > 10000:
-    return range(start, start + 10000)
-  return range(start, end)
-
 # *****************************************************************************
 
 #  evolved function
-def evolve(in0):
+def evolve(in0, in1, in2):
   # stop.value is a boolean flag which should be used to check if the EA wants the program to stop.value
-  stop = False
-  loopBreakConst = 2 * len(in0)
+  loopBreakConst = 2 * 3
   loopBreak = 0
-  b0 = bool(); b1 = bool(); b2 = bool()
+  b0 = bool(); b1 = bool(); b2 = bool()'
   i0 = int(); i1 = int(); i2 = int()
-  li0 = []; li1 = []; li2 = []
   res0 = int()
   <insertCodeHere>
   return res0
 
 
 def fitnessTrainingCase(i, o):
-  eval = evolve(i[0])
-  return [abs(eval - o[0])]
+  eval = evolve(i[0], i[1], i[2])
+
+  return [0 if eval == o[0] else 1]
 
 
 #  function to evaluate fitness
